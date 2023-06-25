@@ -6,7 +6,7 @@ export default class NewsItems extends Component {
     return (
 <div className='my-3'>
 <div className="card" style={{width: "18rem"}}>
-<img src={imageUrl} className="card-img-top" alt="..."/>
+<img src={!imageUrl?"https://ngs-space1.sgp1.digitaloceanspaces.com/am/uploads/mediaGallery/image/1687549631265.jpg-org":imageUrl} className="card-img-top" alt="..."/>
 <div className="card-body">
 <h5 className="card-title">{title}...</h5>
 <p className="card-text">{description}...</p>
