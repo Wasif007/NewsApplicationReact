@@ -11,7 +11,7 @@ export default class App extends Component {
     return (
       <div>
       <Navbar/>
-      <NewsComponent pageSize={8}/> 
+      <NewsComponent pageSize={3}/> 
      
       </div>
     )
