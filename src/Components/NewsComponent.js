@@ -8,7 +8,8 @@ export class NewsComponent extends Component {
     super();
     this.state={
      articles:[],
-     loading:false
+     loading:false,
+     page:1
      }
   }
   async componentDidMount(){
@@ -18,6 +19,25 @@ export class NewsComponent extends Component {
     this.setState({
       articles:parsedData.articles
     })
+  }
+  nextPageLoader=async()=>{
+    let url=`https://newsapi.org/v2/top-headlines?country=in&apiKey=232940725ff745df866efb9778420f11&page=${this.state.page+1}`;
+    let data= await fetch(url); 
+    let parsedData= await data.json();
+    this.setState({
+      articles:parsedData.articles,
+      page:this.state.page+1
+    })
+  }
+  prevPageLoader=async()=>{
+    let url=`https://newsapi.org/v2/top-headlines?country=in&apiKey=232940725ff745df866efb9778420f11&page=${this.state.page-1}`;
+  let data= await fetch(url); 
+  let parsedData= await data.json();
+  this.setState({
+    articles:parsedData.articles,
+    page:this.state.page-1
+  })
+
   }
   render() {
     return (
@@ -31,6 +51,10 @@ export class NewsComponent extends Component {
             </div>
           })}
           
+         </div>
+         <div className="container d-flex justify-content-between">
+         <button disabled={this.state.page<=1} type="button" className="btn btn-dark" onClick={this.prevPageLoader}>&larr; Previous</button>
+         <button type="button" className="btn btn-dark" onClick={this.nextPageLoader}>Next &rarr;</button>
          </div>
       </div>
     )
