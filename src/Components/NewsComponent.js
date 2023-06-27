@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import NewsItems from './NewsItems'
 import Spinner from './Spinner';
-//import PropTypes from 'prop-types'
+
 
 
 //232940725ff745df866efb9778420f11
@@ -15,6 +15,7 @@ export class NewsComponent extends Component {
      page:1
      }
   }
+ 
   async componentDidMount(){
     let url=`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=232940725ff745df866efb9778420f11&pageSize=${this.props.pageSize}`;
     
@@ -66,7 +67,7 @@ export class NewsComponent extends Component {
   render() {
     return (
       <div className='container my-3'>
-        <h1 className="text-center">
+        <h1 className="text-center" style={{margin:"35px 0px"}}>
         CatNews - Top Headlines
         </h1>
         {this.state.loading && <Spinner/>}
