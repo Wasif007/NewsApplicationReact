@@ -1,0 +1,19 @@
+<Route path='/general' 
+element={<NewsComponent pageSize={3} country="in" category="business"/>
+<Route path='/general' 
+element={<NewsComponent pageSize={3} country="in" category="entertainment"/>
+<Route path='/general' 
+element={<NewsComponent pageSize={3} country="in" category="general"/>
+<Route path='/general' 
+element={<NewsComponent pageSize={3} country="in" category="health"/>
+<Route path='/general' 
+element={<NewsComponent pageSize={3} country="in" category="science"/>
+<Route path='/general' 
+element={<NewsComponent pageSize={3} country="in" category="sports"/>
+<Route path='/general' 
+element={<NewsComponent pageSize={3} country="in" category="technology       "/>
+         
+<Route path='/general' 
+element={<NewsComponent pageSize={3} country="in" category="sports"/> 
+} />         
+        
